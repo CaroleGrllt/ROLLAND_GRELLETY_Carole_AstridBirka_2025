@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://www.astridbirka.fr/" />
     <meta property="og:title" content="Astrid Birka - Coach en développement personnel" />
     <meta property="og:description" content="Passez de l'hésitation à l'action : coaching individuel, forfaits d'accompagnement et ateliers d'affirmation de soi en entreprise." />
-    <meta property="og:image" content="https://www.astridbirka.fr/frontend/assets/img/logo-1024.webp" />
+    <meta property="og:image" content="https://www.astridbirka.fr/assets/img/logo-1024.webp" />
     <meta property="og:image:alt" content="Astrid Birka, coach en développement personnel" />
 
 
@@ -27,12 +27,12 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Astrid Birka - Coach en développement personnel" />
     <meta name="twitter:description" content="Coaching pour décider et agir avec clarté et confiance : séances Déclic, forfaits, ateliers entreprises." />
-    <meta name="twitter:image" content="https://www.astridbirka.fr/frontend/assets/img/logo-1024.webp" />
+    <meta name="twitter:image" content="https://www.astridbirka.fr/assets/img/logo-1024.webp" />
 
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-star-32.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-star-16.webp">
     <link rel="apple-touch-icon" sizes="150x150" href="./assets/img/favicon-150.png">
     <link rel="manifest" href="/site.webmanifest">
 
@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/animations.css">
     <link rel="stylesheet" href="./assets/styles/responsive.css">
+    <link rel="stylesheet" href="./assets/styles/accessibility.css">
+
     <script type="application/ld+json">
        {
             "@context": "https://schema.org",
@@ -89,7 +91,7 @@
                     "@id": "https://www.astridbirka.fr/#business",
                     "name": "Astrid Birka Coaching",
                     "url": "https://www.astridbirka.fr/",
-                    "image": "https://www.astridbirka.fr/assets/og-image.jpg",
+                    "image": "https://www.astridbirka.fr/assets/img/logo-1024.webp",
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://www.astridbirka.fr/assets/logo.png"
@@ -117,7 +119,7 @@
                         "confiance en soi",
                         "prise de décision",
                         "reconversion professionnelle",
-                        "coaching femmes"
+                        "coaching femmes",
                         "coaching développement personnel"
                     ],
                     "makesOffer": [
@@ -126,7 +128,7 @@
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Séance Déclic Action",
-                                "url": "https://www.astridbirka.fr/frontend/services.html#seance-unique"
+                                "url": "https://www.astridbirka.fr/services.html#seance-unique"
                             },
                             "price": "85",
                             "priceCurrency": "EUR"
@@ -136,7 +138,7 @@
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Forfaits Coaching",
-                                "url": "https://www.astridbirka.fr/frontend/services.html#forfaits"
+                                "url": "https://www.astridbirka.fr/services.html#forfaits"
                             },
                             "price": "320",
                             "priceCurrency": "EUR"
@@ -146,7 +148,7 @@
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Ateliers Entreprises",
-                                "url": "https://www.astridbirka.fr/frontend/services.html#entreprises"
+                                "url": "https://www.astridbirka.fr/services.html#entreprises"
                             },
                             "price": "800",
                             "priceCurrency": "EUR"
@@ -158,278 +160,274 @@
     </script>
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar" role="navigation" aria-label="Navigation principale">
-        <div class="navbar-container">
-            <a class="logo" href="index.html" aria-label="Retour à l’accueil">
-                <img
-                    src="./assets/img/logo-200.webp"
-                    srcset="./assets/img/logo-200.webp 1x,
-                            ./assets/img/logo-350.webp 2x"
-                    alt="Astrid Birka — logo"
-                    fetchpriority="high"
-                />
-            </a>
-
-            <button
-                class="nav-toggle"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
-                aria-label="Ouvrir le menu"
-            >
-                <!-- Icône burger -->
-                <svg class="icon-burger" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-                </svg>
-                <!-- Icône close -->
-                <svg class="icon-close" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-                    <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-                </svg>
-            </button>
-
-            <ul id="primary-navigation" class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Accompagnements</a></li>
-                <li><a href="about.html">Qui suis-je ?</a></li>
-                <li><a href="testimonials.html">Témoignages</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Navigation principale">
+            <div class="navbar-container">
+                <a class="logo" href="index.html" aria-label="Retour à l’accueil">
+                    <img
+                        src="./assets/img/logo-200.webp"
+                        srcset="./assets/img/logo-200.webp 1x,
+                                ./assets/img/logo-350.webp 2x"
+                        alt=""
+                        fetchpriority="high"
+                    />
+                </a>
+    
+                <button
+                    class="nav-toggle"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false"
+                    aria-label="Ouvrir le menu"
+                >
+                    <!-- Icône burger -->
+                    <svg class="icon-burger" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <!-- Icône close -->
+                    <svg class="icon-close" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </button>
+    
+                <ul id="primary-navigation" class="nav-links">
+                    <li><a href="index.html" aria-current="page">Accueil</a></li>
+                    <li><a href="services.html">Accompagnements</a></li>
+                    <li><a href="about.html">Qui suis-je ?</a></li>
+                    <li><a href="testimonials.html">Témoignages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="lead-magnet-banner">
+            <p>🎁 <strong>Nouveau :</strong> Téléchargez mon guide gratuit "5 étapes pour prendre LA décision que vous reportez depuis des mois" → <a href="#lead-magnet">Télécharger maintenant</a></p>
         </div>
-    </nav>
-    
-    <!-- LEAD MAGNET BANNER -->
-    <div class="lead-magnet-banner">
-        <p>🎁 <strong>Nouveau :</strong> Téléchargez mon guide gratuit "5 étapes pour prendre LA décision que vous reportez depuis des mois" → <a href="#lead-magnet">Télécharger maintenant</a></p>
-    </div>
-    
-    <!-- HERO SECTION -->
-    <section class="hero" id="accueil">
-        <div class="hero-content">
-            <h1>TRANSFORMEZ VOS HÉSITATIONS EN DÉCISIONS<br>ET VOS IDÉES EN ACTIONS</h1>
-            <p class="hero-subtitle">Je suis Astrid Birka, coach spécialiste du passage à l'action.</p>
-            <p class="hero-description">
-                J'aide les femmes à sortir de l'hésitation, à retrouver confiance en elles et à construire leur plan d'action concret.
-            </p>
-            <div class="hero-buttons">
-                <a href="services.html" class="btn btn-primary btn-hero">Découvrir mes accompagnements</a>
-                <a href="#lead-magnet" class="btn btn-secondary btn-hero">Télécharger mon guide gratuit</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SECTION PROBLÈMES -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Vous vous reconnaissez ?</div>
-                <h2 class="section-title">Ces situations vous parlent ?</h2>
-            </div>
-            
-            <div class="problems-grid">
-                <div class="problem-item">
-                    <div class="problem-icon">🤔</div>
-                    <p class="problem-text">Vous hésitez depuis des mois sur une décision importante (reconversion, démission, création d'entreprise...).</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-icon">🔄</div>
-                    <p class="problem-text">Vous tournez en rond, vous avez fait des listes pour/contre, demandé l'avis de 10 personnes... et vous êtes toujours au même point.</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-icon">😶</div>
-                    <p class="problem-text">Vous avez du mal à vous affirmer au travail, à poser vos limites, à dire non sans culpabiliser.</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-icon">😓</div>
-                    <p class="problem-text">Vous manquez de confiance pour vous lancer, vous doutez de votre légitimité, vous vous sentez invisible.</p>
-                </div>
-            </div>
-            
-            <div class="solution-container">
-                <p>Je suis là pour vous aider !</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SECTION OFFRES -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Comment je vous aide</div>
-                <h2 class="section-title">Mes Accompagnements</h2>
-                <p class="section-subtitle">
-                    Que vous ayez besoin d'un déclic immédiat ou d'un suivi sur plusieurs mois, j'ai l'accompagnement adapté à votre situation.
+        
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <h1>TRANSFORMEZ VOS HÉSITATIONS EN DÉCISIONS<br>ET VOS IDÉES EN ACTIONS</h1>
+                <p class="hero-subtitle">Je suis Astrid Birka, coach spécialiste du passage à l'action.</p>
+                <p class="hero-description">
+                    J'aide les femmes à sortir de l'hésitation, à retrouver confiance en elles et à construire leur plan d'action concret.
                 </p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary btn-hero">Découvrir mes accompagnements</a>
+                    <a href="#lead-magnet" class="btn btn-secondary btn-hero">Télécharger mon guide gratuit</a>
+                </div>
             </div>
-            
-            <div class="offers-grid">
-                <!-- Séance Unique -->
-                <div class="offer-card">
-                    <div class="offer-icon">🎯</div>
-                    <h3 class="offer-title">Séance "Déclic Action"</h3>
-                    <p class="offer-description">
-                        90 minutes pour identifier votre vrai blocage et construire votre plan d'action personnalisé.
-                    </p>
-                    <div class="offer-price">À partir de 85€</div>
-                    <a href="services.html#seance-unique" class="btn btn-primary btn-card-home">En savoir plus</a>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Vous vous reconnaissez ?</div>
+                    <h2 class="section-title">Ces situations vous parlent ?</h2>
                 </div>
                 
-                <!-- Forfaits -->
-                <div class="offer-card">
-                    <div class="offer-icon">💼</div>
-                    <h3 class="offer-title">Forfaits Coaching</h3>
-                    <p class="offer-description">
-                        Accompagnement sur 2 à 5 mois pour ancrer les changements dans la durée avec un suivi régulier.
-                    </p>
-                    <div class="offer-price">À partir de 320€</div>
-                    <a href="services.html#forfaits" class="btn btn-primary btn-card-home">Découvrir</a>
+                <div class="problems-grid">
+                    <div class="problem-item">
+                        <div class="problem-icon">🤔</div>
+                        <p class="problem-text">Vous hésitez depuis des mois sur une décision importante (reconversion, démission, création d'entreprise...).</p>
+                    </div>
+                    
+                    <div class="problem-item">
+                        <div class="problem-icon">🔄</div>
+                        <p class="problem-text">Vous tournez en rond, vous avez fait des listes pour/contre, demandé l'avis de 10 personnes... et vous êtes toujours au même point.</p>
+                    </div>
+                    
+                    <div class="problem-item">
+                        <div class="problem-icon">😶</div>
+                        <p class="problem-text">Vous avez du mal à vous affirmer au travail, à poser vos limites, à dire non sans culpabiliser.</p>
+                    </div>
+                    
+                    <div class="problem-item">
+                        <div class="problem-icon">😓</div>
+                        <p class="problem-text">Vous manquez de confiance pour vous lancer, vous doutez de votre légitimité, vous vous sentez invisible.</p>
+                    </div>
                 </div>
                 
-                <!-- Entreprises -->
-                <div class="offer-card">
-                    <div class="offer-icon">👥</div>
-                    <h3 class="offer-title">Ateliers Entreprises</h3>
-                    <p class="offer-description">
-                        Ateliers d'affirmation de soi en milieu professionnel pour réseaux de femmes et organisations.
-                    </p>
-                    <div class="offer-price">À partir de 800€</div>
-                    <a href="services.html#entreprises" class="btn btn-primary btn-card-home">Demander le programme</a>
+                <div class="solution-container">
+                    <p>Je suis là pour vous aider !</p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- SECTION TÉMOIGNAGES -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Résultats concrets</div>
-                <h2 class="section-title">Ce que disent mes clientes</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        En 1 séance, j'ai enfin compris ce qui me bloquait depuis 6 mois. Astrid m'a aidée à voir clair et à poser les premières actions. Aujourd'hui, je ne tourne plus en rond, j'avance !
+        </section>
+        
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Comment je vous aide</div>
+                    <h2 class="section-title">Mes Accompagnements</h2>
+                    <p class="section-subtitle">
+                        Que vous ayez besoin d'un déclic immédiat ou d'un suivi sur plusieurs mois, j'ai l'accompagnement adapté à votre situation.
                     </p>
-                    <div class="testimonial-author">Sophie</div>
-                    <div class="testimonial-role">38 ans, en reconversion</div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        La séance Déclic Action m'a permis d'agir immédiatement avec clarté. Un accompagnement humain, puissant et sans détour.
-                    </p>
-                    <div class="testimonial-author">Virginie</div>
-                    <div class="testimonial-role">Cadre en entreprise</div>
+                <div class="offers-grid">
+                    <!-- Séance Unique -->
+                    <div class="offer-card">
+                        <div class="offer-icon">🎯</div>
+                        <h3 class="offer-title">Séance "Déclic Action"</h3>
+                        <p class="offer-description">
+                            90 minutes pour identifier votre vrai blocage et construire votre plan d'action personnalisé.
+                        </p>
+                        <div class="offer-price">À partir de 85€</div>
+                        <a href="services.html#seance-unique" class="btn btn-primary btn-card-home">En savoir plus</a>
+                    </div>
+                    
+                    <!-- Forfaits -->
+                    <div class="offer-card">
+                        <div class="offer-icon">💼</div>
+                        <h3 class="offer-title">Forfaits Coaching</h3>
+                        <p class="offer-description">
+                            Accompagnement sur 2 à 5 mois pour ancrer les changements dans la durée avec un suivi régulier.
+                        </p>
+                        <div class="offer-price">À partir de 320€</div>
+                        <a href="services.html#forfaits" class="btn btn-primary btn-card-home">Découvrir</a>
+                    </div>
+                    
+                    <!-- Entreprises -->
+                    <div class="offer-card">
+                        <div class="offer-icon">👥</div>
+                        <h3 class="offer-title">Ateliers Entreprises</h3>
+                        <p class="offer-description">
+                            Ateliers d'affirmation de soi en milieu professionnel pour réseaux de femmes et organisations.
+                        </p>
+                        <div class="offer-price">À partir de 800€</div>
+                        <a href="services.html#entreprises" class="btn btn-primary btn-card-home">Demander le programme</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Résultats concrets</div>
+                    <h2 class="section-title">Ce que disent mes clientes</h2>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        Je me sentais pas capable de postuler et après deux séances j'étais prête et j'ai décroché le poste. Astrid m'a redonné confiance en moi.
-                    </p>
-                    <div class="testimonial-author">Laure</div>
-                    <div class="testimonial-role">Responsable marketing</div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            En 1 séance, j'ai enfin compris ce qui me bloquait depuis 6 mois. Astrid m'a aidée à voir clair et à poser les premières actions. Aujourd'hui, je ne tourne plus en rond, j'avance !
+                        </p>
+                        <div class="testimonial-author">Sophie</div>
+                        <div class="testimonial-role">38 ans, en reconversion</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            La séance Déclic Action m'a permis d'agir immédiatement avec clarté. Un accompagnement humain, puissant et sans détour.
+                        </p>
+                        <div class="testimonial-author">Virginie</div>
+                        <div class="testimonial-role">Cadre en entreprise</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            Je me sentais pas capable de postuler et après deux séances j'étais prête et j'ai décroché le poste. Astrid m'a redonné confiance en moi.
+                        </p>
+                        <div class="testimonial-author">Laure</div>
+                        <div class="testimonial-role">Responsable marketing</div>
+                    </div>
+                </div>
+                
+                <div class="btn-home-testimonials-container">
+                    <a href="testimonials.html" class="btn btn-secondary btn-home-testimonials">Lire tous les témoignages</a>
                 </div>
             </div>
-            
-            <div class="btn-home-testimonials-container">
-                <a href="testimonials.html" class="btn btn-secondary btn-home-testimonials">Lire tous les témoignages</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SECTION LEAD MAGNET -->
-    <section class="section section-alt" id="lead-magnet">
-        <div class="container lead-home-container">
-            <div class="section-header">
-                <div class="section-tag">Guide gratuit</div>
-                <h2 class="section-title">Téléchargez Mon Guide Gratuit</h2>
-                <p class="section-subtitle">
-                    <strong>"5 étapes pour prendre LA décision que vous reportez depuis des mois"</strong><br><br>
-                    Dans ce guide, vous découvrirez les 3 vraies raisons qui vous bloquent, ma méthode "Déclic Action" en 5 étapes, et des exercices pratiques pour passer à l'action immédiatement.
-                </p>
-            </div>
-            
-            <!-- FORMULAIRE DE CAPTURE -->
-            <div class="form-home-container">
-                <form action="/subscribe" method="post" autocomplete="on" novalidate>
-                    <!-- Anti-spam (honeypot) -->
-                    <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
-                        <label for="website">Si vous êtes humain, laissez ce champ vide</label>
-                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                    </div>
-
-                    <div class="form-home-content">
-                        <label for="first_name">
-                        Prénom <span aria-hidden="true">*</span>
-                        <span class="sr-only">(obligatoire)</span>
-                        </label>
-                        <input
-                        id="first_name"
-                        name="first_name"
-                        type="text"
-                        required
-                        autocomplete="given-name"
-                        inputmode="text"
-                        aria-required="true"
-                        >
-                    </div>
-
-                    <div class="form-home-content">
-                        <label for="email">
-                        Email <span aria-hidden="true">*</span>
-                        <span class="sr-only">(obligatoire)</span>
-                        </label>
-                        <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        autocomplete="email"
-                        inputmode="email"
-                        aria-required="true"
-                        >
-                    </div>
-
-                    <!-- Consentement RGPD -->
-                    <div class="form-home-consent">
-                        <input id="consent" name="consent" type="checkbox" required aria-required="true">
-                        <label for="consent" class="form-consent">
-                            J’accepte que mes données soient utilisées pour m’envoyer le guide et des emails liés à ce contenu.
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary form-home-btn">
-                        Télécharger le guide gratuit
-                    </button>
-
-                    <p class="form-home-warning" id="privacy-note">
-                        Vos données sont protégées. Pour plus d'informations, veuillez consulter la
-                        <a href="policy.html">politique de confidentialité</a>.
+        </section>
+        
+        <section class="section section-alt" id="lead-magnet">
+            <div class="container lead-home-container">
+                <div class="section-header">
+                    <div class="section-tag">Guide gratuit</div>
+                    <h2 class="section-title">Téléchargez Mon Guide Gratuit</h2>
+                    <p class="section-subtitle">
+                        <strong>"5 étapes pour prendre LA décision que vous reportez depuis des mois"</strong><br><br>
+                        Dans ce guide, vous découvrirez les 3 vraies raisons qui vous bloquent, ma méthode "Déclic Action" en 5 étapes, et des exercices pratiques pour passer à l'action immédiatement.
                     </p>
-                </form>
-            </div>
-        </div>
-    </section>
+                </div>
+                
+                <!-- FORMULAIRE DE CAPTURE -->
+                <div class="form-home-container">
+                    <form action="/subscribe" method="post" autocomplete="on" novalidate>
+                        <!-- Anti-spam (honeypot) -->
+                        <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+                            <label for="website">Si vous êtes humain, laissez ce champ vide</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
     
-    <!-- CTA FINAL -->
-    <section class="cta-final">
-        <div class="container">
-            <h2>Prête à Passer à l'Action ?</h2>
-            <p>Réservez votre séance ou contactez-moi pour toute question</p>
-            <div class="hero-buttons">
-                <a href="https://calendly.com/astridbirka/declicaction" target="_blank" class="btn btn-primary book-home-btn">Réserver ma séance</a>
-                <a href="contact.html" class="btn btn-secondary contact-home-btn">Me contacter</a>
-            </div>
-        </div>
-    </section>
+                        <div class="form-home-content">
+                            <label for="first_name">
+                            Prénom <span aria-hidden="true">*</span>
+                            <span class="sr-only">(obligatoire)</span>
+                            </label>
+                            <input
+                            id="first_name"
+                            name="first_name"
+                            type="text"
+                            required
+                            autocomplete="given-name"
+                            inputmode="text"
+                            aria-required="true"
+                            >
+                        </div>
     
-    <!-- FOOTER -->
+                        <div class="form-home-content">
+                            <label for="email">
+                            Email <span aria-hidden="true">*</span>
+                            <span class="sr-only">(obligatoire)</span>
+                            </label>
+                            <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            autocomplete="email"
+                            inputmode="email"
+                            aria-required="true"
+                            >
+                        </div>
+    
+                        <!-- Consentement RGPD -->
+                        <fieldset class="form-home-consent">
+                            <legend class="sr-only">Consentement</legend>
+                            <input id="consent" name="consent" type="checkbox" required aria-required="true">
+                            <label for="consent" class="form-consent">
+                                J’accepte que mes données soient utilisées pour m’envoyer le guide et des emails liés à ce contenu.
+                            </label>
+                        </fieldset>
+    
+                        <button type="submit" class="btn btn-primary form-home-btn">
+                            Télécharger le guide gratuit
+                        </button>
+    
+                        <p class="form-home-warning" id="privacy-note">
+                            Vos données sont protégées. Pour plus d'informations, veuillez consulter la
+                            <a href="policy.html">politique de confidentialité</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-final">
+            <div class="container">
+                <h2>Prête à Passer à l'Action ?</h2>
+                <p>Réservez votre séance ou contactez-moi pour toute question</p>
+                <div class="hero-buttons">
+                    <a href="https://calendly.com/astridbirka/declicaction" target="_blank" class="btn btn-primary book-home-btn">Réserver ma séance<span class="sr-only">(ouvre une nouvelle fenêtre)</span></a>
+                    <a href="contact.html" class="btn btn-secondary contact-home-btn">Me contacter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
     <footer class="footer">
-        <div class="footer-links">
+        <nav aria-label="Navigation secondaire" class="footer-links">
             <ul id="secondary-navigation" class="footer-nav-links-second">
                 <li><a href="services.html">Accompagnements</a></li>
                 <li><a href="about.html">Qui suis-je ?</a></li>
@@ -437,30 +435,33 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="policy.html">Mentions légales, CGU, <br>politique de confidentialité</a></li>
             </ul>
-        </div>
+        </nav>
         
         <div class="footer-contact">
             <img
                 class="footer-img"
                 src="./assets/img/logo-white.webp"
-                alt="Astrid Birka — logo"
+                alt=""
                 fetchpriority="high"
             />
             <div class="picto-container">
                 <a class="picto-link" href="https://www.linkedin.com/in/astrid-birka-05803a397/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                     <img src="./assets/img/linkedin.webp" alt="LinkedIn" class="picto-footer">
+                     <img src="./assets/img/linkedin.webp" alt="" class="picto-footer">
+                     <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
                 </a>
                 <!-- <a class="picto-link" href="https://www.facebook.com/Astridbirka" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <img src="./assets/img/facebook.webp" alt="Facebook" class="picto-footer">
+                    <img src="./assets/img/facebook.webp" alt="" class="picto-footer">
+                    <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
                 </a> -->
                 <a class="picto-link" href="https://www.instagram.com/astridbirka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                     <img src="./assets/img/instagram.webp" alt="Instagram" class="picto-footer">
+                     <img src="./assets/img/instagram.webp" alt="" class="picto-footer">
+                     <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
                 </a>
             </div>
             <ul class="footer-contact-links">
-                <li><a href="mailto:contact@astridbirka.fr"><span>📧</span>contact@astridbirka.fr</a></li>
-                <li><a href="tel:0781793140"><span>📞</span>07 81 79 31 40</a></li>
-                <li><a href="index.html"><span>🌐</span>www.astridbirka.fr</a></li>
+                <li><a href="mailto:contact@astridbirka.fr"><span aria-hidden="true">📧</span><span class="sr-only">E-mail :</span>contact@astridbirka.fr</a></li>
+                <li><a href="tel:0781793140"><span aria-hidden="true">📞</span><span class="sr-only">Téléphone :</span>07 81 79 31 40</a></li>
+                <li><a href="index.html"><span aria-hidden="true">🌐</span><span class="sr-only">Site web :</span>www.astridbirka.fr</a></li>
             </ul>
         </div>
         
