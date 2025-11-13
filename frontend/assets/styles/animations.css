@@ -1,0 +1,6 @@
+@media (prefers-reduced-motion: no-preference) {
+  @media (max-width: 768px) {
+    .nav-links { transition: transform .18s ease, opacity .18s ease; transform: translateY(-6px); opacity: 0; }
+    .navbar.is-open .nav-links { transform: translateY(0); opacity: 1; }
+  }
+}
