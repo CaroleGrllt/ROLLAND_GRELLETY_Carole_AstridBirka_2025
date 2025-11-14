@@ -60,12 +60,31 @@
   placeMenuUnderNavbar();
 })();
 
+const isLocal =
+  location.hostname === 'localhost' ||
+  location.hostname === '127.0.0.1';
+
+const API_BASE = isLocal
+  ? 'http://localhost:3000'  
+  : '';
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
+  // On cible spécifiquement le formulaire du guide
+  const form = document.querySelector('form[action="/subscribe"], form[data-api="subscribe"]');
   if (!form) return;
 
   const requiredInputs = form.querySelectorAll('input[required]');
+
+  // Élément pour afficher le message global (succès / erreur serveur)
+  let statusEl = form.querySelector('.form-status');
+  if (!statusEl) {
+    statusEl = document.createElement('p');
+    statusEl.className = 'form-status';
+    statusEl.setAttribute('aria-live', 'polite');
+    // tu peux changer la position si tu préfères
+    form.appendChild(statusEl);
+  }
 
   // --- helpers ---
   const emailIsValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
@@ -165,14 +184,60 @@ document.addEventListener('DOMContentLoaded', () => {
     clearError(input); return true;
   }
 
-  // Validation au submit
-  form.addEventListener('submit', (e) => {
+  // --- Validation + appel backend au submit ---
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    statusEl.textContent = '';
+    statusEl.classList.remove('form-status--error', 'form-status--success');
+
     let allValid = true;
     requiredInputs.forEach((input) => {
       if (!validateField(input)) allValid = false;
     });
-    if (allValid) form.submit(); // brancher ton backend plus tard
+
+    if (!allValid) {
+      const firstInvalid = form.querySelector('input[aria-invalid="true"]');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    // Tous les champs sont OK → on envoie au backend
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Forcer la valeur de consent en booléen cohérent
+    const consentInput = form.querySelector('#consent');
+    if (consentInput) {
+      payload.consent = consentInput.checked;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok || !json.ok) {
+        throw new Error(json.message || json.error || 'Une erreur est survenue. Merci de réessayer.');
+      }
+
+      // Succès : message de validation
+      statusEl.textContent = json.message || 'Merci ! Le document vous est envoyé par email. Bonne lecture !';
+      statusEl.classList.add('form-status--success');
+      statusEl.setAttribute('role', 'status');
+      statusEl.setAttribute('aria-live', 'polite');
+
+      form.reset();
+      requiredInputs.forEach((input) => clearError(input));
+    } catch (err) {
+      statusEl.textContent = err.message || 'Erreur lors de l’envoi. Merci de réessayer.';
+      statusEl.classList.add('form-status--error');
+      statusEl.setAttribute('role', 'alert');
+      statusEl.setAttribute('aria-live', 'assertive');
+    }
   });
 
   // Effacement des erreurs au fil de la correction

@@ -34,7 +34,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-star-32.webp">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-star-16.webp">
     <link rel="apple-touch-icon" sizes="150x150" href="./assets/img/favicon-150.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
 
     <!-- Preconnects for performance -->
@@ -352,7 +352,7 @@
                 
                 <!-- FORMULAIRE DE CAPTURE -->
                 <div class="form-home-container">
-                    <form action="/subscribe" method="post" autocomplete="on" novalidate>
+                    <form action="/subscribe" method="post" autocomplete="on" novalidate data-api="subscribe">
                         <!-- Anti-spam (honeypot) -->
                         <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
                             <label for="website">Si vous êtes humain, laissez ce champ vide</label>
@@ -408,6 +408,7 @@
                             Vos données sont protégées. Pour plus d'informations, veuillez consulter la
                             <a href="policy.html">politique de confidentialité</a>.
                         </p>
+                        <p class="form-status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>

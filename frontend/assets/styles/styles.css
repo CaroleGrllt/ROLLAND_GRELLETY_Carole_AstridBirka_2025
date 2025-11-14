@@ -518,6 +518,9 @@ input[aria-invalid="true"] {
     font-family: 'Lato', sans-serif;
 }
 
+.form-status--error {text-align: center; color:#D93025; margin-top: 10px;}
+.form-status--success {text-align: center; color:#0d9301; margin-top: 10px;}
+
 /* CTA Final */
 .cta-final {
     background: linear-gradient(135deg, #0D2C5B 0%, #77B5FE 100%);
