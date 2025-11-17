@@ -135,4 +135,22 @@
             transform: translateX(-50%);
         }
 
+        .container-offers {
+            padding: 0 20px; /* moins de padding sur mobile */
+        }
+
+        .offer-card {
+            padding: 24px; /* optionnel : un peu moins de padding pour l’aisance */
+        }
+
+        .b2b-features {
+            grid-template-columns: 1fr;
+            margin: 80px 0;
+        }
+
+        .btn-cta-services, .contact-services-btn {
+            width: 86%; 
+        }
+
+
 }

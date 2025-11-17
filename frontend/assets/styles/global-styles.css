@@ -49,11 +49,8 @@ header {
     align-items: center;
 }
 
-a.logo {
+.navbar-container img {
     z-index: 1000;
-}
-
-a.logo img {
     width: 100px;
     aspect-ratio: 1 / 1;
     height: auto;

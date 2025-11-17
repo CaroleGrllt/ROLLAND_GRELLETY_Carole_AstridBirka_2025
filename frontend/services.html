@@ -164,15 +164,13 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="Navigation principale">
             <div class="navbar-container">
-                <a class="logo" href="index.html" aria-label="Retour à l’accueil">
-                    <img
-                        src="./assets/img/logo-200.webp"
-                        srcset="./assets/img/logo-200.webp 1x,
-                                ./assets/img/logo-350.webp 2x"
-                        alt=""
-                        fetchpriority="high"
-                    />
-                </a>
+                <img
+                    src="./assets/img/logo-200.webp"
+                    srcset="./assets/img/logo-200.webp 1x,
+                            ./assets/img/logo-350.webp 2x"
+                    alt=""
+                    fetchpriority="high"
+                />
     
                 <button
                     class="nav-toggle"
@@ -200,13 +198,13 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main role="main">
     <section class="hero-services">
-        <div class="container">
+        <div class="container-offers">
             <h1 class="hero-title-services">Mes Accompagnements</h1>
             <p>Transformez vos hésitations en décisions et vos idées en actions concrètes</p>
             
-            <nav class="hero-nav">
+            <nav class="hero-nav" aria-label="Navigation des accompagnements">
                 <ul id="hero-navigation" class="nav-links-hero">
                     <li><a href="#seance-unique">Séance unique</a></li>
                     <li><a href="#forfaits">Forfaits</a></li>
@@ -219,7 +217,7 @@
     
     <!-- SÉANCE UNIQUE -->
     <section id="seance-unique" class="main-content">
-        <div class="container">
+        <div class="container-offers">
             <div class="section-header">
                 <div class="section-tag">Pour débuter</div>
                 <h2 class="section-title">Séance "Déclic Action"</h2>
@@ -228,33 +226,42 @@
                 </p>
             </div>
             
-            <div class="offers-grid" style="grid-template-columns: 1fr; max-width: 700px; margin: 0 auto;">
+            <div class="offers-grid-unique">
                 <div class="offer-card featured">
-                    <div class="offer-badge">Recommandé pour débuter</div>
-                    <div class="offer-icon">🎯</div>
-                    <h3 class="offer-title">Séance "Déclic Action"</h3>
-                    <p class="offer-duration">90 minutes en visio ou présentiel (Maisons-Laffitte)</p>
-                    
-                    <div class="offer-price">85€</div>
-                    
-                    <p class="offer-description">
-                        Une séance intensive pour sortir de l'hésitation et passer à l'action. 
-                        Vous repartez avec une feuille de route claire et des actions concrètes à poser immédiatement.
-                    </p>
-                    
-                    <ul class="offer-benefits">
-                        <li>Identification du VRAI problème (pas celui de surface)</li>
-                        <li>Déconstruction des peurs et croyances qui vous paralysent</li>
-                        <li>Construction de VOTRE plan d'action personnalisé</li>
-                        <li>Définition de vos 3 premières actions concrètes</li>
-                    </ul>
-                    
-                    <div class="offer-ideal">
-                        <strong>Idéal si :</strong>
-                        <p>Vous hésitez depuis des mois, vous tournez en rond, vous avez besoin d'un déclic pour passer à l'action.</p>
+                    <div class="content-offer">
+                        <div class="offer-badge">Recommandé pour débuter</div>
+                        <div class="offer-icon" aria-hidden="true">🎯</div>
+                        <h3 class="offer-title">Séance "Déclic Action"</h3>
+                        <p class="offer-duration">90 minutes en visio ou présentiel (Maisons-Laffitte)</p>
+                        
+                        <div class="offer-price">85€</div>
+                        
+                        <p class="offer-description">
+                            Une séance intensive pour sortir de l'hésitation et passer à l'action. 
+                            Vous repartez avec une feuille de route claire et des actions concrètes à poser immédiatement.
+                        </p>
+                        
+                        <ul class="offer-benefits">
+                            <li>Identification du VRAI problème (pas celui de surface)</li>
+                            <li>Déconstruction des peurs et croyances qui vous paralysent</li>
+                            <li>Construction de VOTRE plan d'action personnalisé</li>
+                            <li>Définition de vos 3 premières actions concrètes</li>
+                        </ul>
+                        
+                        <div class="offer-ideal">
+                            <strong>Idéal si :</strong>
+                            <p>Vous hésitez depuis des mois, vous tournez en rond, vous avez besoin d'un déclic pour passer à l'action.</p>
+                        </div>
+                        
+                        <a 
+                            href="https://calendly.com/astridbirka/declicaction" 
+                            class="btn btn-primary" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Réserver ma séance <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
+                        </a>
                     </div>
-                    
-                    <a href="https://calendly.com/astridbirka/declicaction" class="btn btn-primary" target="_blank">Réserver ma séance</a>
                 </div>
             </div>
         </div>
@@ -262,7 +269,7 @@
     
     <!-- FORFAITS -->
     <section id="forfaits" class="section">
-        <div class="container">
+        <div class="container-offers">
             <div class="section-header">
                 <div class="section-tag">Accompagnements suivis</div>
                 <h2 class="section-title">Forfaits Coaching</h2>
@@ -274,65 +281,69 @@
             <div class="offers-grid">
                 <!-- FORFAIT 4 SÉANCES -->
                 <div class="offer-card">
-                    <div class="offer-icon">💼</div>
-                    <h3 class="offer-title">Forfait "Passage à l'Action"</h3>
-                    <p class="offer-duration">4 séances de 90 min sur 2 mois</p>
-                    
-                    <div class="offer-price">320€ <span>/ forfait</span></div>
-                    <div class="offer-savings">Économisez 20€ vs séances à l'unité</div>
-                    
-                    <p class="offer-description">
-                        Un accompagnement structuré pour transformer une décision importante en réalité concrète.
-                    </p>
-                    
-                    <ul class="offer-benefits">
-                        <li>1 séance toutes les 2 semaines</li>
-                        <li>Suivi personnalisé entre les séances</li>
-                        <li>Plan d'action évolutif</li>
-                        <li>Support par email entre les séances</li>
-                    </ul>
-                    
-                    <div class="offer-ideal">
-                        <strong>Idéal pour :</strong>
-                        <p>Reconversion professionnelle, projet entrepreneurial, décision majeure nécessitant un suivi.</p>
+                    <div class="content-offer">
+                        <div class="offer-icon" aria-hidden="true">💼</div>
+                        <h3 class="offer-title">Forfait "Passage à l'Action"</h3>
+                        <p class="offer-duration">4 séances de 90 min sur 2 mois</p>
+                        
+                        <div class="offer-price">320€ <span>/ forfait</span></div>
+                        <div class="offer-savings">Économisez 20€ par rapport aux séances à l'unité</div>
+                        
+                        <p class="offer-description">
+                            Un accompagnement structuré pour transformer une décision importante en réalité concrète.
+                        </p>
+                        
+                        <ul class="offer-benefits">
+                            <li>1 séance toutes les 2 semaines</li>
+                            <li>Suivi personnalisé entre les séances</li>
+                            <li>Plan d'action évolutif</li>
+                            <li>Support par email entre les séances</li>
+                        </ul>
+                        
+                        <div class="offer-ideal">
+                            <strong>Idéal pour :</strong>
+                            <p>Une reconversion professionnelle, un projet entrepreneurial, une décision majeure nécessitant un suivi.</p>
+                        </div>
+                        
+                        <a href="mailto:contact@astridbirka.fr?subject=Forfait 4 séances" class="btn btn-secondary">Me contacter</a>
                     </div>
-                    
-                    <a href="mailto:contact@astridbirka.fr?subject=Forfait 4 séances" class="btn btn-secondary">Me contacter</a>
                 </div>
                 
                 <!-- FORFAIT 10 SÉANCES -->
                 <div class="offer-card">
-                    <div class="offer-badge">Meilleur rapport qualité/prix</div>
-                    <div class="offer-icon">🌟</div>
-                    <h3 class="offer-title">Forfait "Transformation"</h3>
-                    <p class="offer-duration">10 séances de 90 min sur 5 mois</p>
-                    
-                    <div class="offer-price">750€ <span>/ forfait</span></div>
-                    <div class="offer-savings">Économisez 100€ vs séances à l'unité</div>
-                    
-                    <p class="offer-description">
-                        Un accompagnement en profondeur pour une transformation durable de votre vie professionnelle ou personnelle.
-                    </p>
-                    
-                    <ul class="offer-benefits">
-                        <li>2 séances par mois pendant 5 mois</li>
-                        <li>Travail sur les blocages profonds</li>
-                        <li>Outils : Human Design, psychogénéalogie</li>
-                        <li>Support continu par email</li>
-                        <li>Bilan mensuel de progression</li>
-                    </ul>
-                    
-                    <div class="offer-ideal">
-                        <strong>Idéal pour :</strong>
-                        <p>Transformation profonde, travail sur la confiance en soi, affirmation de soi, changement de vie majeur.</p>
+                    <div class="content-offer">
+                        <div class="offer-badge">Meilleur rapport qualité/prix</div>
+                        <div class="offer-icon" aria-hidden="true">🌟</div>
+                        <h3 class="offer-title">Forfait "Transformation"</h3>
+                        <p class="offer-duration">10 séances de 90 min sur 5 mois</p>
+                        
+                        <div class="offer-price">750€ <span>/ forfait</span></div>
+                        <div class="offer-savings">Économisez 100€ par rapport aux séances à l'unité</div>
+                        
+                        <p class="offer-description">
+                            Un accompagnement en profondeur pour une transformation durable de votre vie professionnelle ou personnelle.
+                        </p>
+                        
+                        <ul class="offer-benefits">
+                            <li>2 séances par mois pendant 5 mois</li>
+                            <li>Travail sur les blocages profonds</li>
+                            <li>Outils : Human Design, psychogénéalogie</li>
+                            <li>Support continu par email</li>
+                            <li>Bilan mensuel de progression</li>
+                        </ul>
+                        
+                        <div class="offer-ideal">
+                            <strong>Idéal pour :</strong>
+                            <p>Une transformation profonde, un travail sur la confiance en soi, une affirmation de soi, un changement de vie majeur.</p>
+                        </div>
+                        
+                        <a href="mailto:contact@astridbirka.fr?subject=Forfait 10 séances" class="btn btn-secondary">Me contacter</a>
                     </div>
-                    
-                    <a href="mailto:contact@astridbirka.fr?subject=Forfait 10 séances" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
             
             <div class="info-box">
-                <p><strong>💡 Vous hésitez entre une séance unique et un forfait ?</strong></p>
+                <p><strong><span aria-hidden="true">💡</span> Vous hésitez entre une séance unique et un forfait ?</strong></p>
                 <p>
                     Commencez par la séance "Déclic Action" à 85€. Si vous souhaitez poursuivre ensuite, 
                     je déduis cette première séance du forfait choisi.
@@ -343,9 +354,9 @@
     
     <!-- ENTREPRISES -->
     <section id="entreprises">
-        <div class="container">
+        <div class="container-offers">
             <div class="b2b-section">
-                <h2>👥 Ateliers pour Entreprises</h2>
+                <h2><span aria-hidden="true">👥 </span>Ateliers pour Entreprises</h2>
                 <p>
                     J'accompagne les réseaux de femmes et les organisations sur l'affirmation de soi 
                     en milieu professionnel.
@@ -353,23 +364,23 @@
                 
                 <div class="b2b-features">
                     <div class="b2b-feature">
-                        <div class="b2b-feature-icon">💬</div>
+                        <div class="b2b-feature-icon" aria-hidden="true">💬</div>
                         <h3>Atelier "Affirmation de soi"</h3>
                         <p>Apprendre à dire non, poser des limites, s'affirmer en réunion</p>
                     </div>
                     <div class="b2b-feature">
-                        <div class="b2b-feature-icon">👥</div>
+                        <div class="b2b-feature-icon" aria-hidden="true">👥</div>
                         <h3>Format adapté</h3>
                         <p>2h30 ou 4x1h15 - En présentiel ou visio - 8 à 12 participantes</p>
                     </div>
                     <div class="b2b-feature">
-                        <div class="b2b-feature-icon">🎯</div>
+                        <div class="b2b-feature-icon" aria-hidden="true">🎯</div>
                         <h3>Approche pratique</h3>
                         <p>70% d'exercices, 30% de théorie - Résultats immédiats</p>
                     </div>
                 </div>
                 
-                <p style="font-size: 20px; margin: 30px 0;">
+                <p class="p-offer-group">
                     <strong>À partir de 800€</strong> par atelier
                 </p>
                 
@@ -382,28 +393,20 @@
     
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
-        <div class="container">
+        <div class="container-offers">
             <h2>Prête à passer à l'action ?</h2>
             <p>Réservez votre séance ou contactez-moi pour toute question</p>
-            
             <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <a href="mailto:contact@astridbirka.fr">contact@astridbirka.fr</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <a href="tel:0781793140">07.81.79.31.40</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🌐</span>
-                    <a href="https://www.astridbirka.fr">www.astridbirka.fr</a>
-                </div>
+                <a 
+                    href="https://calendly.com/astridbirka/declicaction" 
+                    target="_blank" 
+                    class="btn btn-primary btn-cta-services"
+                    rel="noopener noreferrer"
+                >
+                    Réserver ma séance Déclic Action<span class="sr-only">(ouvre une nouvelle fenêtre)</span>
+                </a>
+                <a href="contact.html" class="btn btn-secondary contact-services-btn">Me contacter</a>
             </div>
-            
-            <a href="https://calendly.com/votre-lien" class="btn btn-primary" style="max-width: 350px; margin: 0 auto;">
-                → Réserver ma séance Déclic Action
-            </a>
         </div>
     </section>
     
@@ -428,23 +431,50 @@
                 fetchpriority="high"
             />
             <div class="picto-container">
-                <a class="picto-link" href="https://www.linkedin.com/in/astrid-birka-05803a397/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                     <img src="./assets/img/linkedin.webp" alt="" class="picto-footer">
-                     <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
+                <a 
+                    class="picto-link" 
+                    href="https://www.linkedin.com/in/astrid-birka-05803a397/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="LinkedIn (ouvre une nouvelle fenêtre)"
+                >
+                    <img src="./assets/img/linkedin.webp" alt="" class="picto-footer">
                 </a>
-                <!-- <a class="picto-link" href="https://www.facebook.com/Astridbirka" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <!-- <a class="picto-link" href="https://www.facebook.com/Astridbirka" target="_blank" rel="noopener noreferrer" aria-label="Facebook (ouvre une nouvelle fenêtre)">
                     <img src="./assets/img/facebook.webp" alt="" class="picto-footer">
-                    <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
                 </a> -->
-                <a class="picto-link" href="https://www.instagram.com/astridbirka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                     <img src="./assets/img/instagram.webp" alt="" class="picto-footer">
-                     <span class="sr-only">(ouvre une nouvelle fenêtre)</span>
+                <a 
+                    class="picto-link" 
+                    href="https://www.instagram.com/astridbirka/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Instagram (ouvre une nouvelle fenêtre)"
+                >
+                    <img src="./assets/img/instagram.webp" alt="" class="picto-footer">
                 </a>
             </div>
             <ul class="footer-contact-links">
-                <li><a href="mailto:contact@astridbirka.fr"><span aria-hidden="true">📧</span><span class="sr-only">E-mail :</span>contact@astridbirka.fr</a></li>
-                <li><a href="tel:0781793140"><span aria-hidden="true">📞</span><span class="sr-only">Téléphone :</span>07 81 79 31 40</a></li>
-                <li><a href="index.html"><span aria-hidden="true">🌐</span><span class="sr-only">Site web :</span>www.astridbirka.fr</a></li>
+                <li>
+                    <a href="mailto:contact@astridbirka.fr">
+                        <span aria-hidden="true">📧</span>
+                        <span class="sr-only">E-mail :</span>
+                        contact@astridbirka.fr
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:0781793140">
+                        <span aria-hidden="true">📞</span>
+                        <span class="sr-only">Téléphone :</span>
+                        07 81 79 31 40
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span aria-hidden="true">🌐</span>
+                        <span class="sr-only">Site web :</span>
+                        www.astridbirka.fr
+                    </a>
+                </li>
             </ul>
         </div>
         

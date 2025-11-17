@@ -330,6 +330,11 @@
     color: #0D2C5B;
 }
 
+.btn-home-testimonials:hover {
+    background: #0D2C5B;
+    color: white;
+}
+
 /* FORMULAIRE */
 .lead-home-container {
     max-width: 800px;
@@ -394,13 +399,13 @@ button.form-home-btn {
 
 .form-home-warning {
     font-size: 12px;
-    color: #999;
+    color: #595959;
     margin-top: 15px;
     text-align: center;
 }
 
 .form-home-warning a {
-    color: #999;
+    color: #595959;
     cursor: pointer;
 }
 
