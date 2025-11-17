@@ -1,0 +1,282 @@
+.container-about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Hero Section */
+.hero-about {
+    background: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+}
+
+.profile-photo-container {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    border: 5px solid #FAB9A6;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(13, 44, 91, 0.15);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0D2C5B 0%, #77B5FE 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.hero-about h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #0D2C5B;
+    margin-bottom: 15px;
+}
+
+.decorative-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D2C5B 0%, #FAB9A6 100%);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+.hero-about-subtitle {
+    font-size: 20px;
+    color: #4a4a4a;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.content-grid-first {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.content-grid-second {
+    grid-template-columns: 1fr;
+}
+
+.content-block {
+    background: white;
+}
+
+.content-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0D2C5B;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #FAB9A6;
+}
+
+.content-text {
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.content-text strong {
+    color: #0D2C5B;
+    font-weight: 700;
+}
+
+/* Quote Section */
+.quote-section {
+    background: linear-gradient(135deg, rgba(13, 44, 91, 0.05) 0%, rgba(250, 185, 166, 0.05) 100%);
+    padding: 50px 40px;
+    margin: 60px 0;
+    border-left: 5px solid #FAB9A6;
+    border-radius: 0 12px 12px 0;
+}
+
+.quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #0D2C5B;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Birka Story Section */
+.birka-story {
+    background: white;
+    padding: 60px 40px;
+    margin: 60px 0;
+}
+
+.birka-story h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0D2C5B;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.birka-story-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.birka-story p {
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.birka-story strong {
+    color: #0D2C5B;
+    font-weight: 700;
+}
+
+.highlight-box {
+    background: #f0f8ff;
+    border-left: 4px solid #77B5FE;
+    padding: 25px 30px;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.highlight-box p {
+    font-size: 15px;
+    color: #0D2C5B;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Beliefs Section */
+.beliefs-section {
+    background: #fafafa;
+    padding: 60px 40px;
+}
+
+.beliefs-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0D2C5B;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.belief-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.belief-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.belief-text {
+    font-size: 15px;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #0D2C5B 0%, #77B5FE 100%);
+}
+
+.cta-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    color: white;
+}
+
+.content-cta-btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 38%;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    margin: 0 10px;
+}
+
+.btn-primary {
+    background: white;
+    color: #0D2C5B;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+}

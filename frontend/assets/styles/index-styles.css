@@ -98,7 +98,6 @@
 }
 
 .btn-secondary:hover {
-    background: white;
     color: #0D2C5B;
     border-color: white;
 }
@@ -463,3 +462,10 @@ input[aria-invalid="true"] {
 .contact-home-btn {
    width: 35%; 
 }
+
+.contact-home-btn:hover {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: white !important;
+    color: white !important;
+}
+

@@ -136,11 +136,11 @@
         }
 
         .container-offers {
-            padding: 0 20px; /* moins de padding sur mobile */
+            padding: 0 20px; 
         }
 
         .offer-card {
-            padding: 24px; /* optionnel : un peu moins de padding pour l’aisance */
+            padding: 24px; 
         }
 
         .b2b-features {
@@ -152,5 +152,34 @@
             width: 86%; 
         }
 
+    /* ABOUT */
+        .container-about {
+            padding: 0 20px;
+        }
+    
+        .hero-about h1 {
+            font-size: 32px;
+        }
 
+        .profile-photo-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+        }
+
+        .profile-photo-container img {
+            width: 180px;
+            height: auto;
+        }
+        
+        .content-grid,
+        .beliefs-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-btn-about {
+            width: 86%;
+        }
+        
+    /* TESTIMONIALS */
 }
