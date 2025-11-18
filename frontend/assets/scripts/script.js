@@ -1,3 +1,4 @@
+// SCRIPT POUR LE MENU BURGER
 (function () {
   const navbar = document.querySelector('.navbar');
   const toggle = document.querySelector('.nav-toggle');
@@ -60,15 +61,13 @@
   placeMenuUnderNavbar();
 })();
 
-const isLocal =
-  location.hostname === 'localhost' ||
-  location.hostname === '127.0.0.1';
 
-const API_BASE = isLocal
-  ? 'http://localhost:3000'  
-  : '';
+// SCRIPT DE CONNEXION FRONTEND ET BACKEND
+const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+const API_BASE = isLocal ? 'http://localhost:3000' : '';
 
 
+// SCRIPT POUR LE FORULAIRE DE TELECHARGEMENT
 document.addEventListener('DOMContentLoaded', () => {
   // On cible spécifiquement le formulaire du guide
   const form = document.querySelector('form[action="/subscribe"], form[data-api="subscribe"]');
@@ -251,4 +250,62 @@ document.addEventListener('DOMContentLoaded', () => {
       input.addEventListener('blur', handler);
     }
   });
+});
+
+
+// SCRIPT DE TRI
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('[data-testimonial-toggle]');
+  const filterItems   = document.querySelectorAll('.categories-nav .category-btn');
+  const testimonials  = document.querySelectorAll('.testimonial-card');
+
+  function applyFilter(tag) {
+    testimonials.forEach(card => {
+      const cardTag = card.dataset.testimonialTag;
+      const shouldShow = tag === 'all' || cardTag === tag;
+      card.style.display = shouldShow ? '' : 'none';
+    });
+  }
+
+  function handleFilterClick(event) {
+    const span = event.currentTarget;
+    const li   = span.closest('.category-btn');
+    const tag  = span.dataset.testimonialToggle;
+
+    filterItems.forEach(item => item.classList.remove('is-active'));
+    if (li) li.classList.add('is-active');
+
+    applyFilter(tag);
+  }
+
+  // --- listeners sur les SPAN (clic + clavier) ---
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', handleFilterClick);
+    btn.setAttribute('role', 'button');
+    btn.setAttribute('tabindex', '0');
+
+    btn.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        handleFilterClick(event);
+      }
+    });
+  });
+
+  // --- faire remonter le clic du LI vers le SPAN ---
+  filterItems.forEach(li => {
+    const span = li.querySelector('[data-testimonial-toggle]');
+    if (!span) return;
+
+    li.addEventListener('click', (event) => {
+      // si on a cliqué directement sur le span,
+      // son propre handler va déjà se charger du filtre
+      if (event.target === span) return;
+
+      span.click(); // déclenche le clic "normal" du span
+    });
+  });
+
+  // filtre par défaut
+  applyFilter('all');
 });

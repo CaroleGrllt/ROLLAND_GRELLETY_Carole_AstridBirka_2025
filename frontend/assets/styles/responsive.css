@@ -182,4 +182,24 @@
         }
         
     /* TESTIMONIALS */
+
+        .categories-nav ul {
+            grid-template-columns: 1fr;
+        }
+
+        .container-testimonials {
+            padding: 0 20px;
+        }
+
+        .container-testimonials h1 {
+            font-size: 30px;
+        }
+
+        .container-testimonials h2 {
+            font-size: 28px;
+        }
+
+        .cta-btn-testimonials {
+            width: 86%;
+        }
 }
