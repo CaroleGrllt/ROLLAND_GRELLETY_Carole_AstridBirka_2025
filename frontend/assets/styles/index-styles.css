@@ -86,9 +86,8 @@
 }
 
 .btn-primary:hover {
-    background: #f8a891;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(250, 185, 166, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
 }
 
 .btn-secondary {
@@ -98,7 +97,7 @@
 }
 
 .btn-secondary:hover {
-    color: #0D2C5B;
+    background: rgba(255,255,255,0.1);
     border-color: white;
 }
 

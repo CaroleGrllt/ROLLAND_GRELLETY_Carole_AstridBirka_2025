@@ -253,6 +253,211 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// SCRIPT DU FORMULAIRE DE CONTACT
+document.addEventListener('DOMContentLoaded', () => {
+  // === FORMULAIRE DE CONTACT ===
+  const contactForm = document.querySelector('form[data-api="contact"], form[action="/contact"]');
+  if (!contactForm) return;
+
+  const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
+
+  // Élément de statut global (succès / erreur)
+  let statusEl = contactForm.querySelector('.form-status');
+  if (!statusEl) {
+    statusEl = document.createElement('p');
+    statusEl.className = 'form-status';
+    statusEl.setAttribute('aria-live', 'polite');
+    contactForm.appendChild(statusEl);
+  }
+
+  // --- Helpers ---
+  const emailIsValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  function getLabelEl(input) {
+    const wrapping = input.closest('label');
+    if (wrapping) return wrapping;
+
+    if (input.id) {
+      try {
+        return contactForm.querySelector(`label[for="${CSS.escape(input.id)}"]`);
+      } catch {
+        return contactForm.querySelector(`label[for="${input.id}"]`);
+      }
+    }
+    return null;
+  }
+
+  function getAnchorForError(input) {
+    const label = getLabelEl(input);
+    return label || input;
+  }
+
+  function findExistingError(anchor) {
+    const next = anchor.nextElementSibling;
+    return next && next.classList && next.classList.contains('form-error') ? next : null;
+  }
+
+  function showError(input, message) {
+    clearError(input);
+
+    const anchor = getAnchorForError(input);
+    const error = document.createElement('div');
+    error.className = 'form-error';
+    error.role = 'alert';
+    error.setAttribute('aria-live', 'polite');
+
+    const baseId = (input.name || input.id || 'field') + '-error';
+    let errorId = baseId;
+    let i = 1;
+    while (document.getElementById(errorId)) {
+      errorId = `${baseId}-${i++}`;
+    }
+    error.id = errorId;
+    error.textContent = message;
+
+    input.setAttribute('aria-invalid', 'true');
+
+    const describedBy = (input.getAttribute('aria-describedby') || '').trim();
+    input.setAttribute(
+      'aria-describedby',
+      (describedBy ? describedBy + ' ' : '') + errorId
+    );
+
+    anchor.insertAdjacentElement('afterend', error);
+  }
+
+  function clearError(input) {
+    input.removeAttribute('aria-invalid');
+
+    const describedBy = (input.getAttribute('aria-describedby') || '')
+      .split(/\s+/)
+      .filter(Boolean);
+
+    if (describedBy.length) {
+      const keep = [];
+      for (const id of describedBy) {
+        const el = document.getElementById(id);
+        if (el && el.classList && el.classList.contains('form-error')) {
+          el.remove();
+        } else {
+          keep.push(id);
+        }
+      }
+      if (keep.length) {
+        input.setAttribute('aria-describedby', keep.join(' '));
+      } else {
+        input.removeAttribute('aria-describedby');
+      }
+    } else {
+      const anchor = getAnchorForError(input);
+      const err = findExistingError(anchor);
+      if (err) err.remove();
+    }
+  }
+
+  function validateField(input) {
+    const isCheckbox = input.type === 'checkbox';
+    const value = isCheckbox ? input.checked : input.value.trim();
+    let message = '';
+
+    if (isCheckbox) {
+      if (!value) {
+        message = 'Vous devez cocher cette case pour continuer.';
+      }
+    } else {
+      if (input.required && !value) {
+        message = 'Ce champ est obligatoire.';
+      } else if (input.type === 'email' && value && !emailIsValid(value)) {
+        message = 'Veuillez saisir une adresse e-mail valide.';
+      }
+    }
+
+    if (message) {
+      showError(input, message);
+      return false;
+    }
+
+    clearError(input);
+    return true;
+  }
+
+  // --- Soumission du formulaire ---
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    statusEl.textContent = '';
+    statusEl.classList.remove('form-status--error', 'form-status--success');
+    statusEl.removeAttribute('role');
+
+    let allValid = true;
+    requiredFields.forEach((input) => {
+      if (!validateField(input)) allValid = false;
+    });
+
+    if (!allValid) {
+      const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    // Construction du payload
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Normaliser le consentement
+    const consentInput = contactForm.querySelector('#consent');
+    if (consentInput) {
+      payload.consent = consentInput.checked;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok || !json.ok) {
+        throw new Error(
+          json.message ||
+          json.error ||
+          'Une erreur est survenue. Merci de réessayer.'
+        );
+      }
+
+      statusEl.textContent =
+        json.message ||
+        'Merci ! Votre message a bien été envoyé. Je reviens vers vous au plus vite.';
+      statusEl.classList.add('form-status--success');
+      statusEl.setAttribute('role', 'status');
+      statusEl.setAttribute('aria-live', 'polite');
+
+      contactForm.reset();
+      requiredFields.forEach((input) => clearError(input));
+    } catch (err) {
+      statusEl.textContent =
+        err.message || 'Erreur lors de l’envoi. Merci de réessayer.';
+      statusEl.classList.add('form-status--error');
+      statusEl.setAttribute('role', 'alert');
+      statusEl.setAttribute('aria-live', 'assertive');
+    }
+  });
+
+  // Validation au fil de la saisie
+  requiredFields.forEach((input) => {
+    const handler = () => validateField(input);
+    if (input.type === 'checkbox') {
+      input.addEventListener('change', handler);
+      input.addEventListener('blur', handler);
+    } else {
+      input.addEventListener('input', handler);
+      input.addEventListener('blur', handler);
+    }
+  });
+});
+
 // SCRIPT DE TRI
 document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('[data-testimonial-toggle]');

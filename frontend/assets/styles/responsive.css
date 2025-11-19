@@ -202,4 +202,23 @@
         .cta-btn-testimonials {
             width: 86%;
         }
+
+    /* CONTACT */
+
+        .container-contact {
+            padding: 0 20px;
+        }
+
+
+        .hero-contact h1 {
+            font-size: 32px;
+        }
+
+        .container-contact h2 {
+            text-align: center;
+        }
+
+        .content-grid {
+            grid-template-columns: 1fr;
+        }            
 }
