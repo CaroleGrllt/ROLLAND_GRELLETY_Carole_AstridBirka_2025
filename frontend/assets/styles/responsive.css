@@ -53,35 +53,20 @@
 
         a.logo img { width: 80px;}
 
-        .footer { 
-            flex-direction: column; 
-            gap: 40px;
+        footer {
+            padding: 20px;
         }
 
-        .footer-contact { order: 1; gap: 20px;} 
-        .footer-links   { order: 2;}
-
-        .footer-links ul {
-            gap: 10px;
+        .footer-container {
+            /* grid-template-columns: 1fr; 
+            justify-items: center; */
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
         }
 
-        .footer-contact .picto-container {
-            gap: 25px;
-        }
-
-        .picto-footer {
-            width: 30px;
-        }
-
-        .footer-contact-links {
-            gap: 15px;
-        }
-
-        .footer-copyright {
-            order: 3;
-            margin-left: 0;
-            text-align: left;
-            align-self: auto;
+        .footer-container .logo-container img {
+            width: 120px;
         }
 
     /* HOME */

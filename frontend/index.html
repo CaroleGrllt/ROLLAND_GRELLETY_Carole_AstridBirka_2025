@@ -439,10 +439,10 @@
             </div>
         </section>
     </main>
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="footer-container">
                 <div class="logo-container">
-                    <div class="img-container">
+                    <div class="img-container" aria-hidden="true">
                         <img
                             class="footer-img"
                             src="./assets/img/logo-white.webp"
@@ -452,32 +452,38 @@
                     </div>
                 </div>
                 <div class="sitemap-container">
-                    <p>Liens utiles</p>
+                    <h2 class="footer-heading">Liens utiles</h2>
                     <nav aria-label="Navigation secondaire - plan du site" class="footer-links">
                         <ul id="secondary-navigation" class="footer-nav-links-second">
-                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="index.html" aria-current="page">Accueil</a></li>
                             <li><a href="services.html">Accompagnements</a></li>
+                            <li><a href="about.html"> Qui suis-je ?</a></li>
                             <li><a href="testimonials.html">Témoignages</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li><a href="policy.html">Mentions légales, CGU, <br>politique de confidentialité</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="articles-container">
-                    <p>Dernières publications</p>
+                <!-- <div class="articles-container">
+                    <h2 class="footer-heading">Dernière publications</h2>
                     <div class="content">
                         <article>
-                            <div class="article-image">
-                                <img src="" alt="">
-                            </div>
-                            <h2>Titre de l'article en question</h2>
+                            <a href="">
+                                <div class="article-image">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="article-info">
+                                    <h2></h2>
+                                    <span>Lire l'article ></span>
+                                </div>
+                            </a>
                         </article>
                     </div>
-                </div>
+                </div> -->
                 <div class="contact-container">
                     <div class="cta-container">
-                        <a href="contact.html" class="btn btn-secondary cta-btn-about">Me contacter</a>
-                        <ul class="footer-contact-links">
+                        <a href="contact.html#contact" class="btn-footer">Me contacter</a>
+                        <ul class="footer-contact-links" aria-label="Coordonnées de contact">
                             <li>
                                 <a href="mailto:contact@astridbirka.fr">
                                     <span aria-hidden="true">📧</span>
@@ -502,34 +508,41 @@
                         </ul>
                     </div>
                     <div class="social-container">
-                        <p>Suivez-moi !</p>
-                        <a 
-                            class="picto-link" 
-                            href="https://www.linkedin.com/in/astrid-birka-05803a397/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="LinkedIn (ouvre une nouvelle fenêtre)"
-                        >
-                            <img src="./assets/img/linkedin.webp" alt="" class="picto-footer">
-                        </a>
-                        <!-- <a class="picto-link" href="https://www.facebook.com/Astridbirka" target="_blank" rel="noopener noreferrer" aria-label="Facebook (ouvre une nouvelle fenêtre)">
-                            <img src="./assets/img/facebook.webp" alt="" class="picto-footer">
-                        </a> -->
-                        <a 
-                            class="picto-link" 
-                            href="https://www.instagram.com/astridbirka/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="Instagram (ouvre une nouvelle fenêtre)"
-                        >
-                            <img src="./assets/img/instagram.webp" alt="" class="picto-footer">
-                        </a>
+                        <h2 class="footer-heading">Suivez-moi</h2>
+                        <div class="picto-container">
+                            <a 
+                                class="picto-link" 
+                                href="https://www.linkedin.com/in/astrid-birka-05803a397/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="LinkedIn (ouvre une nouvelle fenêtre)"
+                            >
+                                <img src="./assets/img/linkedin.webp" alt="" class="picto-footer">
+                            </a>
+                            <!-- <a 
+                                class="picto-link" 
+                                href="https://www.facebook.com/Astridbirka" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Facebook (ouvre une nouvelle fenêtre)"
+                            >
+                                <img src="./assets/img/facebook.webp" alt="" class="picto-footer">
+                            </a> -->
+                            <a 
+                                class="picto-link" 
+                                href="https://www.instagram.com/astridbirka/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Instagram (ouvre une nouvelle fenêtre)"
+                            >
+                                <img src="./assets/img/instagram.webp" alt="" class="picto-footer">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="copyright-container">
                 <p>Copyright © 2025 Astrid Birka - Tous droits réservés</p>
-                <p>Merci de votre visite ♥</p>
             </div>            
         </footer>
     <script src="./assets/scripts/script.js" defer></script>

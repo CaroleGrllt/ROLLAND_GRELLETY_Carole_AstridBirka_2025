@@ -1,0 +1,90 @@
+        /* Un peu de mise en forme spécifique à la page légale */
+        .legal-main {
+        padding: 80px 0;
+        background: #fafafa;
+        }
+
+        .legal-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 40px;
+        }
+
+        .legal-hero-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: #0D2C5B;
+        margin-bottom: 10px;
+        text-align: center;
+        }
+
+        .legal-hero-subtitle {
+        text-align: center;
+        font-size: 16px;
+        color: #4a4a4a;
+        margin-bottom: 40px;
+        }
+
+        .legal-section {
+        margin-bottom: 50px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px 25px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .legal-section h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #0D2C5B;
+        margin-bottom: 20px;
+        }
+
+        .legal-section h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #0D2C5B;
+        margin: 25px 0 10px;
+        }
+
+        .legal-section p,
+        .legal-section li {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #4a4a4a;
+        }
+
+        .legal-section ul {
+        padding-left: 20px;
+        margin: 10px 0;
+        }
+
+        .legal-highlight {
+        background: #f0f8ff;
+        border-left: 3px solid #77B5FE;
+        padding: 15px 18px;
+        border-radius: 0 8px 8px 0;
+        margin: 20px 0;
+        font-size: 13px;
+        }
+
+        .legal-small {
+        font-size: 12px;
+        color: #777;
+        margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+        .legal-container {
+            padding: 0 20px;
+        }
+        .legal-section {
+            padding: 24px 18px;
+        }
+        .legal-hero-title {
+            font-size: 28px;
+        }
+        }
